@@ -36,15 +36,25 @@ namespace Calculator
             string textbox = tb_mainCalc.Text;
             string btnclicked = btn.Text;
             bool durum = true;
+            int sonindex = SonIndexAl(textbox);
             for (int i = 0; i < textbox.Length; i++)
             {
                 for (int j = 0; j < operations.Length; j++)
                 {
-                    if (textbox[i] == operations[j])
+                    
+                    if (textbox[sonindex] == operations[j])
                     {
                         durum = false;
                         break;
                     }
+                    else
+                    {
+                        durum = true;
+                    }
+                }
+                if (durum == false)
+                {
+                    break;
                 }
             }
             if (durum==true)
@@ -55,11 +65,17 @@ namespace Calculator
             {
 
             }
-            
-
-            
         }
-
+        private int SonIndexAl(string textbox)
+        {
+            int sonindex = 0;
+            for (int i = 0; i < textbox.Length; i++)
+            {
+                sonindex++;
+            }
+            sonindex--;
+            return sonindex;
+        }
         private void btn_Equals_Clicked(object sender, EventArgs e)
         {
 
