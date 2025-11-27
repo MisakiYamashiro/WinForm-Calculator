@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.btn_percent = new System.Windows.Forms.Button();
             this.tb_mainCalc = new System.Windows.Forms.TextBox();
-            this.btn_keepPreviousCalculation = new System.Windows.Forms.Button();
             this.btn_deleteEverything = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_divide = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@
             this.btn_1 = new System.Windows.Forms.Button();
             this.btn_4 = new System.Windows.Forms.Button();
             this.btn_7 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_percent
@@ -71,40 +73,32 @@
             this.tb_mainCalc.Text = "0";
             this.tb_mainCalc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btn_keepPreviousCalculation
-            // 
-            this.btn_keepPreviousCalculation.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_keepPreviousCalculation.Location = new System.Drawing.Point(103, 62);
-            this.btn_keepPreviousCalculation.Name = "btn_keepPreviousCalculation";
-            this.btn_keepPreviousCalculation.Size = new System.Drawing.Size(75, 47);
-            this.btn_keepPreviousCalculation.TabIndex = 0;
-            this.btn_keepPreviousCalculation.Text = "CE";
-            this.btn_keepPreviousCalculation.UseVisualStyleBackColor = true;
-            // 
             // btn_deleteEverything
             // 
             this.btn_deleteEverything.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deleteEverything.Location = new System.Drawing.Point(184, 62);
+            this.btn_deleteEverything.Location = new System.Drawing.Point(103, 62);
             this.btn_deleteEverything.Name = "btn_deleteEverything";
             this.btn_deleteEverything.Size = new System.Drawing.Size(75, 47);
             this.btn_deleteEverything.TabIndex = 0;
             this.btn_deleteEverything.Text = "C";
             this.btn_deleteEverything.UseVisualStyleBackColor = true;
+            this.btn_deleteEverything.Click += new System.EventHandler(this.btn_deleteEverythingClicked);
             // 
             // btn_delete
             // 
             this.btn_delete.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(22, 274);
+            this.btn_delete.Location = new System.Drawing.Point(265, 62);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 47);
             this.btn_delete.TabIndex = 0;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_deleteClicked);
             // 
             // btn_divide
             // 
             this.btn_divide.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_divide.Location = new System.Drawing.Point(265, 62);
+            this.btn_divide.Location = new System.Drawing.Point(184, 62);
             this.btn_divide.Name = "btn_divide";
             this.btn_divide.Size = new System.Drawing.Size(75, 47);
             this.btn_divide.TabIndex = 0;
@@ -165,6 +159,7 @@
             this.btn_decimal.TabIndex = 0;
             this.btn_decimal.Text = ".";
             this.btn_decimal.UseVisualStyleBackColor = true;
+            this.btn_decimal.Click += new System.EventHandler(this.btn_dotClicked);
             // 
             // btn_0
             // 
@@ -175,6 +170,7 @@
             this.btn_0.TabIndex = 0;
             this.btn_0.Text = "0";
             this.btn_0.UseVisualStyleBackColor = true;
+            this.btn_0.Click += new System.EventHandler(this.btn_number_clicked);
             // 
             // btn_2
             // 
@@ -275,11 +271,23 @@
             this.btn_7.UseVisualStyleBackColor = true;
             this.btn_7.Click += new System.EventHandler(this.btn_number_clicked);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 270);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 331);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(365, 332);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tb_mainCalc);
             this.Controls.Add(this.btn_3);
             this.Controls.Add(this.btn_6);
@@ -299,12 +307,12 @@
             this.Controls.Add(this.btn_divide);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_deleteEverything);
-            this.Controls.Add(this.btn_keepPreviousCalculation);
             this.Controls.Add(this.btn_percent);
             this.MaximizeBox = false;
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Calculator_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +322,6 @@
 
         private System.Windows.Forms.Button btn_percent;
         private System.Windows.Forms.TextBox tb_mainCalc;
-        private System.Windows.Forms.Button btn_keepPreviousCalculation;
         private System.Windows.Forms.Button btn_deleteEverything;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_divide;
@@ -333,5 +340,6 @@
         private System.Windows.Forms.Button btn_1;
         private System.Windows.Forms.Button btn_4;
         private System.Windows.Forms.Button btn_7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
