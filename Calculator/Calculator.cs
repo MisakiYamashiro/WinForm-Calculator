@@ -95,74 +95,166 @@ namespace Calculator
         {
             try
             {
+                //string textbox = tb_mainCalc.Text;
+                //double a = 0;
+                //string aStr = "";
+                //string Operator = "";
+                //double b = 0;
+                //string bStr = "";
+                //bool OperatorBuldumMu = false;
+                //int kaldigimIndex = 0;
+                //for (int i = 0; i < textbox.Length; i++)
+                //{
+                //    OperatorBuldumMu = false;
+                //    for (int j = 0; j < operations.Length; j++)
+                //    {
+                //        if (textbox[i] == operations[j] && textbox[i] != '.')
+                //        {
+                //            Operator = textbox[i].ToString();
+                //            OperatorBuldumMu = true;
+                //            break;
+                //        }
+                //    }
+                //    if (OperatorBuldumMu == true)
+                //    {
+                //        break;
+                //    }
+                //    aStr += textbox[i];
+                //    kaldigimIndex++;
+                //}
+                //for (int k = kaldigimIndex + 1 ;k < textbox.Length; k++)
+                //{
+                //    bStr += textbox[k];
+                //}
+                //a = Convert.ToDouble(aStr);
+                //b = Convert.ToDouble(bStr);
+                //string sonucStr = Hesapla(a, Operator, b);
+                //tb_mainCalc.Text = sonucStr;
+
                 string textbox = tb_mainCalc.Text;
-                double a = 0;
-                string aStr = "";
-                string Operator = "";
-                double b = 0;
-                string bStr = "";
-                bool OperatorBuldumMu = false;
-                int kaldigimIndex = 0;
-                for (int i = 0; i < textbox.Length; i++)
+                List<double> numbers = new List<double>();
+                List<string> operators = new List<string>();               
+                string hepsi = "";
+                for (int a = 0; a < textbox.Length; a++)
                 {
-                    OperatorBuldumMu = false;
-                    for (int j = 0; j < operations.Length; j++)
+                    string currentNumber = "";
+                    string operatorcanimistedi = "";
+                    for (int b = 0; b < operations.Length; b++)
                     {
-                        if (textbox[i] == operations[j] && textbox[i] != '.')
+                        bool operatorBuldumMu = false;
+                        string op = "";
+                        if (textbox[a] == operations[b] && textbox[a] != '.')
                         {
-                            Operator = textbox[i].ToString();
-                            OperatorBuldumMu = true;
+                           op += operations[b];
+                           operatorBuldumMu = true;
+
+                        }
+                        if (operatorBuldumMu == true)
+                        {
+                            operators.Add(op);
+                            hepsi += op;
                             break;
+                        }                        
+                    }
+                    for (int i = 0; i < operations.Length; i++)
+                    {
+                        if (textbox[a] == operations[i])
+                        {
+                           // BU DÖNGÜYÜ DÜZELT TEKRAR BREAKDOWN YAP
+                        }
+                        else
+                        {
+                            currentNumber += textbox[a];
+                            hepsi += currentNumber;
                         }
                     }
-                    if (OperatorBuldumMu == true)
-                    {
-                        break;
-                    }
-                    aStr += textbox[i];
-                    kaldigimIndex++;
+                    
+                    numbers.Add(Convert.ToDouble(currentNumber));
                 }
-                for (int k = kaldigimIndex + 1 ;k < textbox.Length; k++)
-                {
-                    bStr += textbox[k];
-                }
-                a = Convert.ToDouble(aStr);
-                b = Convert.ToDouble(bStr);
-                string sonucStr = Hesapla(a, Operator, b);
-                tb_mainCalc.Text = sonucStr;
+                double sonuc = Hesapla(numbers, operators, textbox, hepsi);
+                tb_mainCalc.Text = Convert.ToString(sonuc);
             }
             catch (Exception ex){
                 MessageBox.Show("Hata: " + ex.Message);
             }
         }
-        private string Hesapla(double a, string Op, double b)
+        private double Hesapla(List<double> number, List<string> operators, string textbox, string hepsi)
         {
             try
             {
                 double sonuc = 0;
-                if (Op == "/")
+                for (int i = 0; i < hepsi.Length; i++)
                 {
-                    sonuc = a / b;
+                    double sayi1 = 0;
+                    double sayi2 = 0;
+                    string ope = "";
+                    for (int k = 0; k < number.Count; k++)
+                    {
+                        for (int l = 0; l < operators.Count; l++)
+                        {
+                            if (hepsi[i].ToString() == operators[l])
+                            {
+                                sayi1 = number[k];
+                                ope = operators[l];
+                                sayi2 = number[k + 1];
+                                if (ope == "/")
+                                {
+                                    sonuc += sayi1 / sayi2;
+                                }
+                                else if (ope == "X")
+                                {
+                                    sonuc += sayi1 * sayi2;
+                                }
+                                else if (ope == "+")
+                                {
+                                    sonuc += sayi1 + sayi2;
+                                }
+                                else if (ope == "-")
+                                {
+                                    sonuc += sayi1 - sayi2;
+                                }
+                            }
+                        }
+                    }
+                    
+                    //for (int j = 0; j < operators.Count; j++)
+                    //{
+                    //    if (hepsi[i].ToString() == operators[j] )
+                    //    {
+                    //        string op = "";
+                    //        op += hepsi[i];
+                    //        if (true)
+                    //        {
+
+                    //        }
+                    //    }
+                    //}
                 }
-                else if (Op == "X") {
-                    sonuc = a * b;
-                }
-                else if ( Op == "+")
-                {
-                    sonuc = a + b;
-                }
-                else if (Op == "-")
-                {
-                    sonuc = a - b;
-                }
-                string sonucStr = Convert.ToString(sonuc);
-                return sonucStr;
+                return sonuc;
+                //double sonuc = 0;
+                //if (Op == "/")
+                //{
+                //    sonuc = a / b;
+                //}
+                //else if (Op == "X") {
+                //    sonuc = a * b;
+                //}
+                //else if ( Op == "+")
+                //{
+                //    sonuc = a + b;
+                //}
+                //else if (Op == "-")
+                //{
+                //    sonuc = a - b;
+                //}
+                //string sonucStr = Convert.ToString(sonuc);
+                //return sonucStr; 
             }
 
             catch (Exception ex)
             {
                 ex.GetBaseException();
-                return "Hata";
+                return -1;
             }
         }
         private void btn_dotClicked(object sender, EventArgs e)
