@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|solutionrelative:calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|c:\\users\\efepa\\onedrive\\documenti\\github\\winform-calculator\\calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|C:\\Users\\efepa\\OneDrive\\Documenti\\GitHub\\WinForm-Calculator\\calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|solutionrelative:calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|C:\\Users\\efepa\\OneDrive\\Documenti\\GitHub\\WinForm-Calculator\\Calculator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|solutionrelative:Calculator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|c:\\users\\efepa\\onedrive\\documenti\\github\\winform-calculator\\calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC9EFE7-C9B5-4B9A-82A2-AB5F9831F7B1}|Calculator\\Calculator.csproj|solutionrelative:calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,8 @@
               "RelativeToolTip": "Calculator\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T22:57:29.208Z"
+              "WhenOpened": "2025-11-25T22:57:29.208Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -52,7 +53,7 @@
               "RelativeDocumentMoniker": "Calculator\\Calculator.cs",
               "ToolTip": "C:\\Users\\efepa\\OneDrive\\Documenti\\GitHub\\WinForm-Calculator\\Calculator\\Calculator.cs",
               "RelativeToolTip": "Calculator\\Calculator.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAAAKIAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAOkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T22:48:50.429Z",
               "EditorCaption": ""
